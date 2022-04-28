@@ -1,38 +1,150 @@
-.App {
+:root {
+  --darkCaramel: #ad6d2f;
+  --lightCaramel: #e4bc84;
+  --mocha: #80411e;
+  --brown: #8f755f;
+  --lightBrown: #d2c1b0;
+}
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  background-image:url("./images/coffeeBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.welcome-card {
+  position: absolute;
+  top: 50px;
+  bottom: auto;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  background: rgb(80, 12, 12);
+  width: 500px;
+  height: fit-content;
+  margin: auto;
+  padding: 0;
+  opacity: .75;
+  box-shadow:  10px 5px 5px rgb(116, 18, 18)  ;
+  animation-name: slideIn;
+  animation-duration: 1.5s;
+
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  background: rgb(80, 12, 12);
+  width: 500px;
+  height: fit-content;
+  margin: auto;
+  padding: 0;
+  opacity: .75;
+  box-shadow:  10px 5px 5px rgb(116, 18, 18)  ;
+  animation-name: slideUp;
+  animation-duration: 1.5s;
+}
+
+.title {
+  
+  margin-top: 0;
+  padding-bottom: .6em;
+  padding-top: .3em;
+  color: white;
+  font-family: verdana;
+  font-size: 2em;
+  text-align: center;
+  background: var(--lightCaramel);
+}
+.login-options {
+  padding: 1em;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login-options h1{
+  font-size: 24px;
+  line-height: 1.2em;
+  color: var(--lightCaramel);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.login-options p {
+  font-size: 1.2em;
+  font-family: sans-serif;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.login-options a {
+  text-decoration: none;
+  color: var(--lightBrown);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.login-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: white;
+  font-size: 1.2em;
+  font-family: sans-serif;
+  margin-left: 1em;
+}
+
+.login-form input{
+  border: none;
+  height: 2.5em;
+  border-radius: 5px;
+  width: 50%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.login-form input:focus{
+  border: none;
+  outline: none;
+  background-color: rgb(88, 88, 88);
+}
+
+button{
+  background:var(--lightCaramel);
+  color: white;
+  font-size: 1.2em;
+  padding: 1em;
+  padding-left: 1.3em;
+  padding-right: 1.3em;
+  border: none;
+  border-radius: 10px;
+}
+.link{
+  font-family: sans-serif;
+  color: white;
+}
+
+@keyframes slideIn{
+  from{
+    top: 50px;
+    bottom: auto;
+    left: -600px;
   }
-  to {
-    transform: rotate(360deg);
+  to{
+    top: 50px;
+    bottom: auto;
+    left: 50px;
   }
 }
+
+@keyframes slideUp{
+  from{
+
+    transform: translateY(800px);
+  }
+  to{
+    transform: translateY(0);
+  }
+}
+
+
